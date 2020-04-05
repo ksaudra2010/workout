@@ -15,13 +15,15 @@ router.get("/api/workouts", (req, res) => {
   Workout.find({})
     .sort({ date: -1 })
     .then(dbWorkout => {
-    dbWorkout.forEach(function(workout){
-      // workout.totalDuration = workout.exercises.reduce(function(total,exercise){
-      // return total + exercise.duration
-      // })
-      workout.totalDuration = 0
+    dbWorkout.forEach(function(workout,index){
+      var total = 0;
+     workout.exercises.forEach(function(exercise){
+       total += exercise.duration
+     })
+      dbWorkout[index].totalDuration = total
+      console.log(workout)
     })
-      console.log(dbWorkout)
+      // console.log(dbWorkout)
       res.json(dbWorkout);
     })
     .catch(err => {

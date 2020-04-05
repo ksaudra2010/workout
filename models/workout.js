@@ -10,6 +10,10 @@ const workoutSchema = new Schema({
   },
   exercises: {
     type: Array
+  },
+  totalDuration: {
+    type: Number,
+    default: 0
   }
 });
 
