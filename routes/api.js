@@ -10,7 +10,7 @@ router.post("/api/workouts", ({ body }, res) => {
       res.status(400).json(err);
     });
 });
-
+// created a get route
 router.get("/api/workouts", (req, res) => {
   Workout.find({})
     .sort({ date: -1 })
