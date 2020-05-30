@@ -18,7 +18,7 @@ async function initWorkout() {
     renderNoWorkoutText()
   }
 }
-
+// create function for tallying weight or distance
 function tallyExercises(exercises) {
   const tallied = exercises.reduce((acc, curr) => {
     if (curr.type === "resistance") {
