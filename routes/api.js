@@ -30,7 +30,7 @@ router.get("/api/workouts", (req, res) => {
       res.status(400).json(err);
     });
 });
-
+// created a put route
 router.put("/api/workouts/:id", (req,res) => {
   console.log(req.body)
   Workout.updateOne({_id:req.params.id},{
